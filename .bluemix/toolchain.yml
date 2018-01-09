@@ -1,0 +1,17 @@
+version: '2'
+template:
+  name: "A Toolchain to create new GitHub repo "
+  description: "Click CREATE to start."
+toolchain:
+  name: 'createRepo-{{timestamp}}'
+  template:
+    getting_started: "Getting Started Text"
+services:
+  sample-repo:
+    service_id: githubpublic
+    parameters:
+      repo_name: '{{toolchain.name}}'
+      repo_url: 'https://github.com/TinaLindhqvist/ATestTool'
+      type: clone
+      has_issues: false
+      enable_traceability: false
